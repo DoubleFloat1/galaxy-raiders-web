@@ -45,7 +45,7 @@ onMounted(() => {
     await $post("/ship/commands", { command })
   });
 
-  window.setInterval(updateSpaceField, 1000);
+  window.setInterval(updateSpaceField, 20);
 })
 </script>
 
