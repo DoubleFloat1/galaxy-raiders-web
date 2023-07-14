@@ -1,6 +1,27 @@
 <template>
   <div id="canvas">
     <div id="deep-space" />
+
+    <div id="menu">
+      <button @click="startGame">Start game</button>
+      
+      <button @click="gotoLeaderboard">Leaderboard</button>
+      
+      <button @click="quit">Quit</button>
+    </div>
+
+    <div id="leaderboard">
+      <h2 class="text" style="text-decoration: underline">Leaderboard</h2>
+
+      <h4 class="text">1st - 123456</h4>
+
+      <h4 class="text">2nd - 115842</h4>
+
+      <h4 class="text">3rd - 98941</h4>
+
+      <button @click="gotoMenu">Back to menu</button>
+    </div>
+
     <div id="space-field">
       <SpaceObject id="spaceship" class="spaceship" :data="spaceField.ship" resolution="2" />
 
@@ -46,7 +67,29 @@ onMounted(() => {
   });
 
   window.setInterval(updateSpaceField, 20);
+
+  document.getElementById("space-field").style.display = "none";
+  document.getElementById("leaderboard").style.display = "none";
 })
+
+function startGame() {
+  document.getElementById("space-field").style.display = "block";
+  document.getElementById("menu").style.display = "none";
+}
+
+function gotoLeaderboard() {
+  document.getElementById("leaderboard").style.display = "block";
+  document.getElementById("menu").style.display = "none";
+}
+
+function gotoMenu() {
+  document.getElementById("menu").style.display = "block";
+  document.getElementById("leaderboard").style.display = "none";
+}
+
+function quit() {
+  document.getElementById("menu").style.display = "none";
+}
 </script>
 
 <style>
@@ -95,6 +138,22 @@ onMounted(() => {
   width: calc(100% - 4rem);
 
   position: relative;
+}
+
+#menu {
+  scale: 5;
+  position: relative;
+  z-index: 1;
+}
+
+#leaderboard {
+  scale: 5;
+  position: relative;
+  z-index: 1;
+}
+
+.text {
+  color: white;
 }
 
 .spaceship {
