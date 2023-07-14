@@ -13,11 +13,11 @@
     <div id="leaderboard">
       <h2 class="text" style="text-decoration: underline">Leaderboard</h2>
 
-      <h4 class="text">1st - 123456</h4>
+      <h4 class="text">1st - {{s1}}</h4>
 
-      <h4 class="text">2nd - 115842</h4>
+      <h4 class="text">2nd - {{s2}}</h4>
 
-      <h4 class="text">3rd - 98941</h4>
+      <h4 class="text">3rd - {{s3}}</h4>
 
       <button @click="gotoMenu">Back to menu</button>
     </div>
@@ -92,6 +92,24 @@ function quit() {
 }
 </script>
 
+<script>
+import json from '../json/Leaderboard.json';
+
+var score1 = json.games[0].score;
+var score2 = json.games[1].score;
+var score3 = json.games[2].score;
+
+export default{
+  data(){
+    return{
+      s1: score1,
+      s2: score2,
+      s3: score3
+    }
+  }
+}
+</script>
+
 <style>
 #canvas {
   height: calc(100vh - 4rem);
@@ -154,6 +172,13 @@ function quit() {
 
 .text {
   color: white;
+}
+
+button {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .spaceship {

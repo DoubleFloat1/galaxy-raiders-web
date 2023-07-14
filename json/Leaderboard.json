@@ -1,0 +1,19 @@
+{
+    "games": [
+        {
+            "date_time": "14/07/2023 17:24:37",
+            "score": 1224265,
+            "asteroids_destroyed": 8
+        },
+        {
+            "date_time": "13/07/2023 22:06:39",
+            "score": 1223460,
+            "asteroids_destroyed": 8
+        },
+        {
+            "date_time": "13/07/2023 22:08:56",
+            "score": 1022898,
+            "asteroids_destroyed": 6
+        }
+    ]
+}
